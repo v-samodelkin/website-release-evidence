@@ -2,7 +2,7 @@
   "schemaVersion": "1.0.0",
   "product": "Website Release Evidence Dossier",
   "version": "1.0.0",
-  "observedAt": "2026-07-13T02:17:22.614Z",
+  "observedAt": "2026-07-13T02:28:24.488Z",
   "target": {
     "requestedUrl": "https://example.com/",
     "requestedUrlSha256": "0f115db062b7c0dd030b16878c99dea5c354b49dc37b38eb8846179c7783e9d7",
@@ -13,7 +13,7 @@
   },
   "http": {
     "status": 200,
-    "durationMs": 147,
+    "durationMs": 152,
     "contentType": "text/html",
     "bodyBytes": 559,
     "bodySha256": "ff67a9d764d6a2367a187734e697f6a53217db9a21c101d410a113ca871a299d",
@@ -95,7 +95,8 @@
       "points": 5,
       "earned": 5,
       "evidence": {
-        "contentType": "text/html"
+        "contentType": "text/html",
+        "parseIssue": null
       },
       "fix": null
     },
@@ -107,7 +108,8 @@
       "points": 5,
       "earned": 2.5,
       "evidence": {
-        "value": null
+        "maxAge": null,
+        "includeSubDomains": false
       },
       "fix": "Strict-Transport-Security: max-age=31536000; includeSubDomains"
     },
@@ -119,7 +121,11 @@
       "points": 5,
       "earned": 2.5,
       "evidence": {
-        "value": null
+        "hasDefaultSrc": false,
+        "objectSrcNone": false,
+        "hasUnsafeInline": false,
+        "hasUnsafeEval": false,
+        "frameAncestorsValid": false
       },
       "fix": "Content-Security-Policy: default-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'"
     },
@@ -144,7 +150,7 @@
       "earned": 2.5,
       "evidence": {
         "xFrameOptions": null,
-        "cspFrameAncestors": false
+        "cspFrameAncestorsValid": false
       },
       "fix": "X-Frame-Options: DENY (or add frame-ancestors 'none' to CSP)"
     },
@@ -156,7 +162,7 @@
       "points": 5,
       "earned": 2.5,
       "evidence": {
-        "header": null
+        "policies": []
       },
       "fix": "Referrer-Policy: strict-origin-when-cross-origin"
     },
@@ -168,7 +174,8 @@
       "points": 5,
       "earned": 2.5,
       "evidence": {
-        "value": null
+        "present": false,
+        "wildcard": false
       },
       "fix": "Permissions-Policy: camera=(), microphone=(), geolocation=()"
     },
@@ -340,13 +347,13 @@
       "fix": "<a href=\"#main\">Skip to main content</a><main id=\"main\">…</main>"
     }
   ],
-  "scope": "One credential-free public HTTPS GET. Served HTML only; no JavaScript rendering, crawling, form submission, login, exploit testing, or third-party trackers are invoked.",
+  "scope": "One credential-free public HTTPS URL. Up to four bounded GETs may occur when following three independently validated redirects; only the final served HTML is analyzed. No JavaScript rendering, subresource crawling, form submission, login, or exploit testing is performed.",
   "caveats": [
     "This is deterministic release evidence, not a full SEO, accessibility, penetration, compliance, or legal audit.",
     "Accessibility checks inspect surface HTML patterns and do not replace WCAG testing with assistive technology.",
     "Suggested header snippets are starting points and must be tested against the site before deployment.",
     "The response body was capped at 524288 bytes, decoded as UTF-8, hashed, and not returned in the report."
   ],
-  "dossierId": "07961f64706cbb898a73b0e4",
-  "reportSha256": "3267f6bf87365c0db411aba215991764a81fb00850d070b82f54d1de293df4b5"
+  "dossierId": "3adb8e1c9cea35a189ba14c1",
+  "reportSha256": "2df9e49a769caeed8251acddf1beb3b384978c0d3f73e60adfb2a32e165830af"
 }
