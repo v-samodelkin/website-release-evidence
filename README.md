@@ -52,11 +52,11 @@ See [sample-report.json](sample-report.json) for a live bounded observation of `
 - IP literals, private/special addresses, private DNS suffixes, credentials, fragments, sensitive/duplicate query parameters, and the service's own hosts are rejected.
 - Every redirect is independently resolved and pinned; maximum three redirects with loop and downgrade blocking.
 - Socket remote IP must match the pinned DNS result.
-- Absolute 12-second deadline, 32 KiB response-header cap, 512 KiB body cap.
+- Absolute 12-second deadline across DNS and requests, 32 KiB response-header cap, 512 KiB final-body cap.
 - `Accept-Encoding: identity`; compressed responses are rejected.
 - The response body is hashed, parsed as served HTML, and never returned.
 - Query values are redacted in report URLs; full URL hashes preserve comparison evidence.
-- No cookies, authorization, referrer, form submission, login, JavaScript, browser rendering, subresources, external AI, or third-party calls.
+- No cookies, authorization, caller referrer, form submission, login, JavaScript, browser rendering, subresources, or external AI calls. Redirect hops may cross origins only after full URL/DNS/TLS/IP revalidation.
 
 ## Scope and caveats
 
