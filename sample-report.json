@@ -1,0 +1,352 @@
+{
+  "schemaVersion": "1.0.0",
+  "product": "Website Release Evidence Dossier",
+  "version": "1.0.0",
+  "observedAt": "2026-07-13T02:17:22.614Z",
+  "target": {
+    "requestedUrl": "https://example.com/",
+    "requestedUrlSha256": "0f115db062b7c0dd030b16878c99dea5c354b49dc37b38eb8846179c7783e9d7",
+    "finalUrl": "https://example.com/",
+    "finalUrlSha256": "0f115db062b7c0dd030b16878c99dea5c354b49dc37b38eb8846179c7783e9d7",
+    "redirectCount": 0,
+    "redirectChain": []
+  },
+  "http": {
+    "status": 200,
+    "durationMs": 147,
+    "contentType": "text/html",
+    "bodyBytes": 559,
+    "bodySha256": "ff67a9d764d6a2367a187734e697f6a53217db9a21c101d410a113ca871a299d",
+    "headers": {
+      "content-type": "text/html",
+      "last-modified": "Wed, 01 Jul 2026 17:52:37 GMT"
+    }
+  },
+  "tls": {
+    "authorized": true,
+    "protocol": "TLSv1.3",
+    "cipher": "TLS_AES_256_GCM_SHA384",
+    "subjectCommonName": "example.com",
+    "issuerCommonName": "Cloudflare TLS Issuing ECC CA 3",
+    "validFrom": "May 31 21:39:12 2026 GMT",
+    "validTo": "Aug 29 21:41:26 2026 GMT",
+    "fingerprint256": "BE:AB:14:CF:39:67:8F:DA:0E:F1:60:6E:ED:B8:18:C2:29:8B:A2:CC:7A:00:88:6E:7D:C2:D2:41:0F:24:CD:35"
+  },
+  "summary": {
+    "score": 72,
+    "possible": 100,
+    "catalogWeight": 100,
+    "grade": "C",
+    "verdict": "improvements-recommended",
+    "ready": false,
+    "passes": 10,
+    "warnings": 12,
+    "failures": 0,
+    "sections": {
+      "transport": {
+        "earned": 15,
+        "possible": 15
+      },
+      "security": {
+        "earned": 15,
+        "possible": 30
+      },
+      "seo": {
+        "earned": 26,
+        "possible": 35
+      },
+      "accessibility": {
+        "earned": 16,
+        "possible": 20
+      }
+    }
+  },
+  "checks": [
+    {
+      "id": "authenticated-https",
+      "section": "transport",
+      "title": "Authenticated public HTTPS",
+      "status": "pass",
+      "points": 5,
+      "earned": 5,
+      "evidence": {
+        "authorized": true,
+        "protocol": "TLSv1.3"
+      },
+      "fix": null
+    },
+    {
+      "id": "http-success",
+      "section": "transport",
+      "title": "Successful final response",
+      "status": "pass",
+      "points": 5,
+      "earned": 5,
+      "evidence": {
+        "status": 200
+      },
+      "fix": null
+    },
+    {
+      "id": "html-content-type",
+      "section": "transport",
+      "title": "HTML content type",
+      "status": "pass",
+      "points": 5,
+      "earned": 5,
+      "evidence": {
+        "contentType": "text/html"
+      },
+      "fix": null
+    },
+    {
+      "id": "hsts",
+      "section": "security",
+      "title": "HSTS",
+      "status": "warning",
+      "points": 5,
+      "earned": 2.5,
+      "evidence": {
+        "value": null
+      },
+      "fix": "Strict-Transport-Security: max-age=31536000; includeSubDomains"
+    },
+    {
+      "id": "csp",
+      "section": "security",
+      "title": "Content Security Policy",
+      "status": "warning",
+      "points": 5,
+      "earned": 2.5,
+      "evidence": {
+        "value": null
+      },
+      "fix": "Content-Security-Policy: default-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'"
+    },
+    {
+      "id": "nosniff",
+      "section": "security",
+      "title": "MIME sniffing disabled",
+      "status": "warning",
+      "points": 5,
+      "earned": 2.5,
+      "evidence": {
+        "value": null
+      },
+      "fix": "X-Content-Type-Options: nosniff"
+    },
+    {
+      "id": "frame-policy",
+      "section": "security",
+      "title": "Frame embedding policy",
+      "status": "warning",
+      "points": 5,
+      "earned": 2.5,
+      "evidence": {
+        "xFrameOptions": null,
+        "cspFrameAncestors": false
+      },
+      "fix": "X-Frame-Options: DENY (or add frame-ancestors 'none' to CSP)"
+    },
+    {
+      "id": "referrer-policy",
+      "section": "security",
+      "title": "Referrer policy",
+      "status": "warning",
+      "points": 5,
+      "earned": 2.5,
+      "evidence": {
+        "header": null
+      },
+      "fix": "Referrer-Policy: strict-origin-when-cross-origin"
+    },
+    {
+      "id": "permissions-policy",
+      "section": "security",
+      "title": "Permissions policy",
+      "status": "warning",
+      "points": 5,
+      "earned": 2.5,
+      "evidence": {
+        "value": null
+      },
+      "fix": "Permissions-Policy: camera=(), microphone=(), geolocation=()"
+    },
+    {
+      "id": "title",
+      "section": "seo",
+      "title": "Descriptive title",
+      "status": "pass",
+      "points": 5,
+      "earned": 5,
+      "evidence": {
+        "length": 14,
+        "value": "Example Domain"
+      },
+      "fix": null
+    },
+    {
+      "id": "meta-description",
+      "section": "seo",
+      "title": "Meta description",
+      "status": "warning",
+      "points": 5,
+      "earned": 2.5,
+      "evidence": {
+        "length": 0
+      },
+      "fix": "<meta name=\"description\" content=\"A specific 50–160 character summary of this release.\">"
+    },
+    {
+      "id": "canonical",
+      "section": "seo",
+      "title": "HTTPS canonical URL",
+      "status": "warning",
+      "points": 5,
+      "earned": 2.5,
+      "evidence": {
+        "value": null
+      },
+      "fix": "<link rel=\"canonical\" href=\"https://example.com/\">"
+    },
+    {
+      "id": "robots-indexable",
+      "section": "seo",
+      "title": "Indexable robots directive",
+      "status": "pass",
+      "points": 4,
+      "earned": 4,
+      "evidence": {
+        "value": "not set (index allowed by default)"
+      },
+      "fix": null
+    },
+    {
+      "id": "html-lang",
+      "section": "seo",
+      "title": "Document language",
+      "status": "pass",
+      "points": 4,
+      "earned": 4,
+      "evidence": {
+        "value": "en"
+      },
+      "fix": null
+    },
+    {
+      "id": "single-h1",
+      "section": "seo",
+      "title": "One non-empty H1",
+      "status": "pass",
+      "points": 4,
+      "earned": 4,
+      "evidence": {
+        "count": 1
+      },
+      "fix": null
+    },
+    {
+      "id": "open-graph",
+      "section": "seo",
+      "title": "Open Graph trio",
+      "status": "warning",
+      "points": 4,
+      "earned": 2,
+      "evidence": {
+        "present": {
+          "title": false,
+          "description": false,
+          "image": false
+        }
+      },
+      "fix": "<meta property=\"og:title\" content=\"…\"><meta property=\"og:description\" content=\"…\"><meta property=\"og:image\" content=\"https://…\">"
+    },
+    {
+      "id": "structured-data",
+      "section": "seo",
+      "title": "Valid JSON-LD",
+      "status": "warning",
+      "points": 4,
+      "earned": 2,
+      "evidence": {
+        "blocks": 0,
+        "valid": 0
+      },
+      "fix": "<script type=\"application/ld+json\">{\"@context\":\"https://schema.org\",\"@type\":\"SoftwareApplication\",\"name\":\"…\"}</script>"
+    },
+    {
+      "id": "image-alt",
+      "section": "accessibility",
+      "title": "Image alternative text",
+      "status": "pass",
+      "points": 4,
+      "earned": 4,
+      "evidence": {
+        "images": 0,
+        "missingAlt": 0
+      },
+      "fix": null
+    },
+    {
+      "id": "form-labels",
+      "section": "accessibility",
+      "title": "Form control names",
+      "status": "pass",
+      "points": 4,
+      "earned": 4,
+      "evidence": {
+        "controls": 0,
+        "unlabeled": 0
+      },
+      "fix": null
+    },
+    {
+      "id": "heading-order",
+      "section": "accessibility",
+      "title": "Heading order",
+      "status": "pass",
+      "points": 4,
+      "earned": 4,
+      "evidence": {
+        "headings": [
+          1
+        ],
+        "jumps": 0
+      },
+      "fix": null
+    },
+    {
+      "id": "main-landmark",
+      "section": "accessibility",
+      "title": "Main landmark",
+      "status": "warning",
+      "points": 4,
+      "earned": 2,
+      "evidence": {
+        "present": false
+      },
+      "fix": "<main id=\"main\">…primary page content…</main>"
+    },
+    {
+      "id": "skip-link",
+      "section": "accessibility",
+      "title": "Working skip link",
+      "status": "warning",
+      "points": 4,
+      "earned": 2,
+      "evidence": {
+        "present": false
+      },
+      "fix": "<a href=\"#main\">Skip to main content</a><main id=\"main\">…</main>"
+    }
+  ],
+  "scope": "One credential-free public HTTPS GET. Served HTML only; no JavaScript rendering, crawling, form submission, login, exploit testing, or third-party trackers are invoked.",
+  "caveats": [
+    "This is deterministic release evidence, not a full SEO, accessibility, penetration, compliance, or legal audit.",
+    "Accessibility checks inspect surface HTML patterns and do not replace WCAG testing with assistive technology.",
+    "Suggested header snippets are starting points and must be tested against the site before deployment.",
+    "The response body was capped at 524288 bytes, decoded as UTF-8, hashed, and not returned in the report."
+  ],
+  "dossierId": "07961f64706cbb898a73b0e4",
+  "reportSha256": "3267f6bf87365c0db411aba215991764a81fb00850d070b82f54d1de293df4b5"
+}
