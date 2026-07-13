@@ -1,0 +1,172 @@
+{
+  "schemaVersion": "1.0.0",
+  "product": "Website Release Evidence Dossier",
+  "catalogWeight": 100,
+  "scoring": {
+    "pass": 1,
+    "warning": 0.5,
+    "fail": 0,
+    "grades": {
+      "A": 90,
+      "B": 80,
+      "C": 70,
+      "D": 60,
+      "F": 0
+    }
+  },
+  "sections": {
+    "transport": 15,
+    "security": 30,
+    "seo": 35,
+    "accessibility": 20
+  },
+  "checks": [
+    {
+      "order": 1,
+      "id": "authenticated-https",
+      "section": "transport",
+      "points": 5
+    },
+    {
+      "order": 2,
+      "id": "http-success",
+      "section": "transport",
+      "points": 5
+    },
+    {
+      "order": 3,
+      "id": "html-content-type",
+      "section": "transport",
+      "points": 5
+    },
+    {
+      "order": 4,
+      "id": "hsts",
+      "section": "security",
+      "points": 5
+    },
+    {
+      "order": 5,
+      "id": "csp",
+      "section": "security",
+      "points": 5
+    },
+    {
+      "order": 6,
+      "id": "nosniff",
+      "section": "security",
+      "points": 5
+    },
+    {
+      "order": 7,
+      "id": "frame-policy",
+      "section": "security",
+      "points": 5
+    },
+    {
+      "order": 8,
+      "id": "referrer-policy",
+      "section": "security",
+      "points": 5
+    },
+    {
+      "order": 9,
+      "id": "permissions-policy",
+      "section": "security",
+      "points": 5
+    },
+    {
+      "order": 10,
+      "id": "title",
+      "section": "seo",
+      "points": 5
+    },
+    {
+      "order": 11,
+      "id": "meta-description",
+      "section": "seo",
+      "points": 5
+    },
+    {
+      "order": 12,
+      "id": "canonical",
+      "section": "seo",
+      "points": 5
+    },
+    {
+      "order": 13,
+      "id": "robots-indexable",
+      "section": "seo",
+      "points": 4
+    },
+    {
+      "order": 14,
+      "id": "html-lang",
+      "section": "seo",
+      "points": 4
+    },
+    {
+      "order": 15,
+      "id": "single-h1",
+      "section": "seo",
+      "points": 4
+    },
+    {
+      "order": 16,
+      "id": "open-graph",
+      "section": "seo",
+      "points": 4
+    },
+    {
+      "order": 17,
+      "id": "structured-data",
+      "section": "seo",
+      "points": 4
+    },
+    {
+      "order": 18,
+      "id": "image-alt",
+      "section": "accessibility",
+      "points": 4
+    },
+    {
+      "order": 19,
+      "id": "form-labels",
+      "section": "accessibility",
+      "points": 4
+    },
+    {
+      "order": 20,
+      "id": "heading-order",
+      "section": "accessibility",
+      "points": 4
+    },
+    {
+      "order": 21,
+      "id": "main-landmark",
+      "section": "accessibility",
+      "points": 4
+    },
+    {
+      "order": 22,
+      "id": "skip-link",
+      "section": "accessibility",
+      "points": 4
+    }
+  ],
+  "limits": {
+    "maxBodyBytes": 524288,
+    "maxRedirects": 3,
+    "totalTimeoutMs": 12000,
+    "maxHeaderBytes": 32768,
+    "method": "GET",
+    "scheme": "https",
+    "port": 443
+  },
+  "scope": {
+    "javascriptExecuted": false,
+    "subresourcesFetched": false,
+    "credentialsUsed": false,
+    "browserRendering": false
+  }
+}
