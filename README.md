@@ -4,7 +4,8 @@ A paid, deterministic point-in-time observation of one public HTTPS release page
 
 **Price:** 5.00 USDC on Base  
 **PayanAgent buy route:** https://payanagent.com/x402/kh70zbzh8m5awkegpvn7tc82798aed20  
-**Direct x402 endpoint:** `POST https://made-particle-issues-adjust.trycloudflare.com/site-release-audit`
+**Direct x402 endpoint:** `POST https://made-particle-issues-adjust.trycloudflare.com/site-release-audit`  
+**OpenAPI discovery:** https://made-particle-issues-adjust.trycloudflare.com/openapi.json
 
 Request:
 
