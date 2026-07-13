@@ -2,7 +2,7 @@
   "schemaVersion": "1.0.0",
   "product": "Website Release Evidence Dossier",
   "version": "1.0.0",
-  "observedAt": "2026-07-13T02:28:24.488Z",
+  "observedAt": "2026-07-13T02:40:46.713Z",
   "target": {
     "requestedUrl": "https://example.com/",
     "requestedUrlSha256": "0f115db062b7c0dd030b16878c99dea5c354b49dc37b38eb8846179c7783e9d7",
@@ -13,7 +13,7 @@
   },
   "http": {
     "status": 200,
-    "durationMs": 152,
+    "durationMs": 140,
     "contentType": "text/html",
     "bodyBytes": 559,
     "bodySha256": "ff67a9d764d6a2367a187734e697f6a53217db9a21c101d410a113ca871a299d",
@@ -109,7 +109,8 @@
       "earned": 2.5,
       "evidence": {
         "maxAge": null,
-        "includeSubDomains": false
+        "includeSubDomains": false,
+        "duplicateMaxAge": false
       },
       "fix": "Strict-Transport-Security: max-age=31536000; includeSubDomains"
     },
@@ -121,10 +122,13 @@
       "points": 5,
       "earned": 2.5,
       "evidence": {
-        "hasDefaultSrc": false,
+        "ambiguousPolicyList": false,
+        "duplicateDirectives": [],
+        "defaultSrcRestrictive": false,
         "objectSrcNone": false,
         "hasUnsafeInline": false,
         "hasUnsafeEval": false,
+        "hasFrameAncestors": false,
         "frameAncestorsValid": false
       },
       "fix": "Content-Security-Policy: default-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'"
@@ -175,6 +179,8 @@
       "earned": 2.5,
       "evidence": {
         "present": false,
+        "directiveCount": 0,
+        "syntaxValid": false,
         "wildcard": false
       },
       "fix": "Permissions-Policy: camera=(), microphone=(), geolocation=()"
@@ -355,5 +361,5 @@
     "The response body was capped at 524288 bytes, decoded as UTF-8, hashed, and not returned in the report."
   ],
   "dossierId": "3adb8e1c9cea35a189ba14c1",
-  "reportSha256": "2df9e49a769caeed8251acddf1beb3b384978c0d3f73e60adfb2a32e165830af"
+  "reportSha256": "9ce63b169adfc4898a69aa8a2e830577d4ed28e201f5c0be446fd1ade43de7e8"
 }
