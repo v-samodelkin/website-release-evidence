@@ -1,11 +1,13 @@
-# Website Release Evidence Dossier
+# AI Discovery Site Audit — AEO/GEO Fix Pack
 
-A paid, deterministic point-in-time observation of one public HTTPS release page.
+A paid, deterministic audit of one public HTTPS page for release quality, AEO, GEO, and agent-discovery readiness. It returns bounded evidence plus five review-ready fixes without logging in, rendering JavaScript, or calling an LLM.
 
 **Price:** 5.00 USDC on Base  
 **PayanAgent buy route:** https://payanagent.com/x402/kh70zbzh8m5awkegpvn7tc82798aed20  
-**Direct x402 endpoint:** `POST https://made-particle-issues-adjust.trycloudflare.com/site-release-audit`  
-**OpenAPI discovery:** https://made-particle-issues-adjust.trycloudflare.com/openapi.json
+**Direct x402 endpoint:** `POST https://agent402.dev/site-release-audit`  
+**OpenAPI discovery:** https://agent402.dev/openapi.json  
+**Full sample:** https://agent402.dev/site-release-audit/sample.json  
+**Seller-controlled before/after proof:** https://agent402.dev/site-release-audit/proof/v1/case-study.json
 
 Request:
 
@@ -13,7 +15,9 @@ Request:
 {"url":"https://example.com/"}
 ```
 
-The response contains 22 checks in fixed order, a 100-point catalog, section scores, observed facts, a concrete remediation for each gap, TLS and bounded HTTP evidence, a dossier ID, body SHA-256, and report SHA-256.
+The v1.1 response contains 22 fixed release checks, seven AEO/GEO/agent-discovery findings, and five evidence-derived, review-ready fixes for JSON-LD, metadata, `robots.txt`, `llms.txt`, and `sitemap.xml`. It also includes the 100-point section score, bounded HTTP/TLS evidence, a dossier ID, body SHA-256, and report SHA-256.
+
+An x402-compatible client must validate the HTTP 402 challenge and retry once with `PAYMENT-SIGNATURE`. Plain `curl` only obtains the challenge and does not pay. Do not send USDC directly to the recipient address; a transfer without the x402 proof cannot authorize delivery.
 
 ## Exact check catalog
 
@@ -44,7 +48,7 @@ The response contains 22 checks in fixed order, a 100-point catalog, section sco
 
 Catalog weights: transport 15, security 30, SEO 35, accessibility surface 20. A pass earns full points, a warning earns half, and a transport failure earns zero. Grades: A ≥90, B ≥80, C ≥70, D ≥60, F <60. The verdict is `strong-baseline` at 90+, `improvements-recommended` at 70–89, and `material-gaps` below 70.
 
-See [sample-report.json](sample-report.json) for a live bounded observation of `example.com`.
+See [sample-report.json](sample-report.json) or the [live v1.1 sample](https://agent402.dev/site-release-audit/sample.json) for a bounded observation of `example.com`. The [seller-controlled case study](https://agent402.dev/site-release-audit/proof/v1/case-study.json) records a reproducible 69/D → 95/A improvement and is explicitly not represented as an independent customer result.
 
 ## Network and privacy boundaries
 
@@ -61,7 +65,7 @@ See [sample-report.json](sample-report.json) for a live bounded observation of `
 
 ## Scope and caveats
 
-This is deterministic release evidence, not a full SEO, accessibility, penetration, compliance, malware, privacy, or legal audit. Accessibility checks are surface HTML indicators and do not establish WCAG conformance. SEO signals do not promise rankings or traffic. Header snippets are starting points and must be tested against the site before deployment.
+This is deterministic release and AI-discovery evidence, not a ranking guarantee or a full SEO, accessibility, penetration, compliance, malware, privacy, or legal audit. AEO and GEO have no universal certification or scoring standard; the report exposes bounded declared signals rather than claiming rankings, citations, traffic, or revenue. Accessibility checks are surface HTML indicators and do not establish WCAG conformance. SEO signals do not promise rankings or traffic. Header snippets are starting points and must be tested against the site before deployment.
 
 The service observes served HTML only. Client-rendered content and runtime behavior are outside v1 scope.
 
